@@ -37,7 +37,7 @@ uint32_t ADC_val;
 void CNTRL_I (struct Coil* coil)
 {
 	ADC_val = val[coil->Shunt];
-	I_y = (((ADC_val / 4096) * 3.3f) / 50) / 0.050f;		// ADC:	Verstärkung	Widerstand -> [A]
+	I_y = (((ADC_val / 4096) * 3.3f) / 50) / 0.050f;		// ADC:	Verstärkung: 50	Widerstand: 50mOhm -> [A]
 	I_w = (coil->w * 0.01) * (M_state.I_max / 2);
 	I_e = I_w - I_y;	// error
 
